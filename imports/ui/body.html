@@ -1,0 +1,17 @@
+<body>
+  <div class="train-area">
+    <textarea class="train-text" id="trn-text"></textarea>
+    <br/>
+    <select class="train-intent" id="trn-intent">
+      {{#each intents}}
+        {{> intent}}
+      {{/each}}
+    </select>
+    <br/>
+    <button class="train-save" id="trn-save">Save</button>
+  </div>
+</body>
+
+<template name="intent">
+  <option value={{text}}>{{text}}</option>
+</template>
