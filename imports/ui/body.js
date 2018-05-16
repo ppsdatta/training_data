@@ -24,10 +24,24 @@ Template.body.events({
     const intent = document.getElementById('trn-intent').value;
     
     if (text) {
-      Intent.insert({
-        text: text,
-        intent: intent
-      })
+      let saved = false;
+
+      try {
+        Intent.insert({
+          text: text,
+          intent: intent
+        });
+        saved = true;
+      } catch (e) {
+        console.log(e);
+      }
+      
+      if (saved) {
+        alert('Saved data');
+      }
+      else {
+        alert('Error in saving data');
+      }
     }
   }
-})
+});
