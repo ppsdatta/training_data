@@ -10,8 +10,17 @@
     <br/>
     <button class="train-save" id="trn-save">Save</button>
   </div>
+  <hr/>
+  <div>
+    {{> exporter}}
+  </div>
 </body>
 
 <template name="intent">
   <option value={{text}}>{{text}}</option>
+</template>
+
+<template name="exporter">
+  <p>Export all data in CSV format (this may take some time to download)</p>
+  <button id="trn-export">Export</button>
 </template>
