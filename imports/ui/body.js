@@ -14,7 +14,8 @@ Template.body.helpers({
     {text: 'show_6_assignments'},
     {text: 'show_7_assignments'},
     {text: 'show_n_assignments'},
-    {text: 'update_time_cards'}
+    {text: 'update_time_cards'},
+    {text: 'does_not_look_like_anything'}
   ]
 });
 
