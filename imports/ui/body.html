@@ -1,15 +1,54 @@
 <body>
-  <div class="train-area">
-    <textarea class="train-text" id="trn-text"></textarea>
-    <br/>
-    <select class="train-intent" id="trn-intent">
-      {{#each intents}}
-        {{> intent}}
-      {{/each}}
-    </select>
-    <br/>
-    <button class="train-save" id="trn-save">Save</button>
-  </div>
+  <h1>Training data collection tool</h1>
+  <p>
+    Enter a sentence or phrase in your language and select an intent to match it. This data
+    will be stored and may be used to train a Machine Learning model to interprete user input
+    for Projectplace Assistant. In way this is sort of programming the AI that
+    is going to interact with users via NLP. More options/intents will be added in the future.
+  </p>
+  <table>
+    <tr>
+      <td>
+        <label for="language">Language</label>
+      </td>
+      <td>
+        <select class="train-select" id="trn-lang">
+            {{#each langs}}
+              {{> lang}}
+            {{/each}}
+          </select>    
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label for="freetext">Type the text in above language</label>
+      </td>
+      <td>
+        <textarea class="train-input" id="trn-text"></textarea>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <lable for="intent">Select the appropriate intention</lable>
+      </td>
+      <td>
+        <select class="train-select" id="trn-intent">
+            {{#each intents}}
+              {{> intent}}
+            {{/each}}
+          </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+
+      </td>
+      <td>
+        <button class="train-button" id="trn-save">Save</button>
+      </td>
+    </tr>
+  </table>
   <hr/>
   <div>
     {{> exporter}}
@@ -20,7 +59,11 @@
   <option value={{text}}>{{text}}</option>
 </template>
 
+<template name="lang">
+    <option value={{text}}>{{text}}</option>
+  </template>
+
 <template name="exporter">
   <p>Export all data in CSV format (this may take some time to download)</p>
-  <button id="trn-export">Export</button>
+  <button id="trn-export" class="train-button">Export</button>
 </template>

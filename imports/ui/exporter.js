@@ -9,11 +9,11 @@ import { saveAs } from 'file-saver';
 Template.exporter.events({
   'click #trn-export'(event) {
     const allIntents = Intent.find();
-    let csvData = 'text,intent\n';
+    let csvData = 'text,intent,language\n';
     let blob = null;
 
     allIntents.forEach((row) => {
-      csvData += `${row.text},${row.intent}\n`;
+      csvData += `${row.text},${row.intent},${(row.lang)? row.lang : 'English'}\n`;
     });
     try {
       blob = new Blob([csvData], {type: 'text/csv;charset=utf-8'});

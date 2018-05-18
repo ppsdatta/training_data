@@ -1,34 +1,37 @@
 /* CSS declarations go here */
 
-.train-area {
-  position: relative;
+.train-input {
+  margin: 10px;
+  padding: 2px;
   min-width: 400px;
-  min-height: 400px;
-  width: 60%;
-  height: 80%;
-  box-shadow: 2px;
+  min-height: 200px;
 }
 
-.train-text {
-  position: relative;
-  width: 96%;
-  height: 60%;
-  padding: 6px;
+.train-select {
   margin: 10px;
-  min-height: 260px;
+  padding: 2px;
+  min-width: 180px;
+  min-height: 40px;
 }
 
-.train-intent {
-  float: left;
-  margin: 10px;
-  padding: 6px;
-  min-width: 200px;
+p,td {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.train-save {
+select {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.train-button {
+  margin: 20px;
+  padding: 4px;
   float: right;
-  margin: 10px;
-  padding: 6px;
-  min-width: 90px;
-  min-height: 90px;
+  background-color: rgb(108, 175, 110); /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
 }

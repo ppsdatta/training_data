@@ -16,6 +16,16 @@ Template.body.helpers({
     {text: 'show_n_assignments'},
     {text: 'update_time_cards'},
     {text: 'does_not_look_like_anything'}
+  ],
+  langs: [
+    {text: 'English'},
+    {text: 'Dansk'},
+    {text: 'Nederlands'},
+    {text: 'Français'},
+    {text: 'Deutsch'},
+    {text: 'Norsk'},
+    {text: 'Svenska'},
+    {text: 'Español'}
   ]
 });
 
@@ -23,6 +33,7 @@ Template.body.events({
   'click #trn-save'(event) {
     const text = document.getElementById('trn-text').value;
     const intent = document.getElementById('trn-intent').value;
+    const lang = document.getElementById('trn-lang').value;
     
     if (text) {
       let saved = false;
@@ -30,7 +41,8 @@ Template.body.events({
       try {
         Intent.insert({
           text: text,
-          intent: intent
+          intent: intent,
+          lang: lang
         });
         saved = true;
       } catch (e) {
