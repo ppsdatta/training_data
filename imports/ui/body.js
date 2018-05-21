@@ -40,7 +40,7 @@ Template.body.events({
 
       try {
         Intent.insert({
-          text: text.replace(/\n/g, ' '),
+          text: text.replace(/[\n,\,]/g, ' '),
           intent: intent,
           lang: lang
         });
