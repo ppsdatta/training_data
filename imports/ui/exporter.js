@@ -13,7 +13,7 @@ Template.exporter.events({
     let blob = null;
 
     allIntents.forEach((row) => {
-      csvData += `${row.text},${row.intent},${(row.lang)? row.lang : 'English'}\n`;
+      csvData += `${row.text.replace(/\n/g, ' ')},${row.intent},${(row.lang)? row.lang : 'English'}\n`;
     });
     try {
       blob = new Blob([csvData], {type: 'text/csv;charset=utf-8'});
